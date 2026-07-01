@@ -1,27 +1,3 @@
-"""
-Rollout-Based Dynamic Hyper-heuristics for the Knapsack Problem
-================================================================
-Clean, reproducible pipeline matching the paper:
-
-  1. Constructive heuristics: DEF, MAXP, MAXPW, MINW
-  2. Rollout policy (one-step heuristic selection, MAXPW completion)
-  3. Eight dynamic state features
-  4. Random Forest hyper-heuristic (behavioral cloning of the rollout
-     oracle) with a confidence-gated fallback to MAXPW
-  5. Evaluation on the test set: mean profits, Wilcoxon signed-rank
-     test, win rate, per-instance timing, and all paper figures
-
-Usage:
-    python rollout_hh_knapsack.py \
-        --train Instances/Train-250-256 \
-        --test  Instances/Test-250-256 \
-        --samples 200 --seed 42
-
-Instance file format (.kp):
-    line 1:  nbItems, capacity
-    lines:   weight, profit
-"""
-
 from __future__ import annotations
 
 import argparse
